@@ -1,0 +1,293 @@
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --backg-color:rgb(96, 98, 155);
+    --lightgreen-color:rgb(163, 216, 152);
+    --black-color:rgb(0, 0, 0);
+    --blue-color: rgb(4, 75, 253);
+    --green-color:rgb(24, 252, 3);
+    --ygreen-color:rgb(169, 252, 3);
+    --white-color:rgb(255, 255, 255);
+
+}
+
+body{
+  background-color:var(--backg-color);
+  font-family: sans-serif;
+}
+
+nav{
+  background-color: var(--lightgreen-color);
+  height: 12vh;
+  width: 100%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.nav-links a:hover,
+.login a:hover {
+    color: var(--blue-color);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+} 
+
+.left{
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.right{
+    width: 45%;
+    padding: 20px;
+    
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: var(--black-color);
+    margin-bottom: 12px;
+}
+
+.wl {
+    font-size: 1.5rem;
+    color: var(--green-color);
+    margin-bottom: 20px;
+}
+ 
+.ou{
+    font-size: 1.5rem;
+    color: var(--green-color);
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--ygreen-color);
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 1rem;
+    color: var(--ygreen-color);
+    margin-bottom: 30px;
+}
+
+.robo {
+    max-width: 100%;
+    height: 60vh;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.book-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color:var(--green-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}    
+   
+.book-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    transition: 0.3s ease;
+    background-color: var(--ygreen-color);
+    color: var(--black-color);
+    font-weight: 520;   
+}
+
+.menu-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 20;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: var(--black-color);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+
+.menu-button:focus .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.menu-button:focus .bar2 {
+    opacity: 0;
+}
+
+.menu-button:focus .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+
+@media (max-width: 160rem) {
+   .login1 {
+        display: none;
+    }
+  .logo {
+         height: 40px; 
+       }
+  .nav-links a {
+         font-size: 0.9rem;
+       }
+  .login a {
+         font-size: 0.9rem;
+       } 
+  .robo {
+         height: 45vh;
+      }
+} 
+
+
+@media (max-width: 48rem) {
+    .login1 {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .wl,
+    .ou {
+        font-size: 1.3rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .desc {
+        font-size: 1rem;
+    }
+
+    .book-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 34rem) {
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-button {
+        display: block;
+        margin-left: auto;
+    }
+
+    .login1 {
+        margin-left: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 12vh;
+        right: 0;
+        left: auto;
+        width: 220px;
+        background-color: var(--lightgreen-color);
+        padding: 20px;
+        gap: 15px;
+        align-items: center;
+        border: 5px solid var(--white-color);
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+
+        transition:
+            transform 0.4s ease,
+            opacity 0.4s ease,
+            visibility 0.4s ease;
+    }
+    .menu-button:focus ~ .nav-links {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .wl,
+    .ou {
+        font-size: 1.1rem;
+    }
+    .tagline {
+        font-size: 1rem;
+    }
+    .desc {
+        font-size: 0.9rem;
+    }
+}
